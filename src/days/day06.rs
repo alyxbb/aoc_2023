@@ -1,12 +1,16 @@
 use crate::{Solution, SolutionPair};
 
+fn part_1(input: String) -> Solution {
+    let sol = 0;
+    Solution::from(sol)
+}
+
+fn part_2(input: String) -> Solution {
+    let sol = 0;
+    Solution::from(sol)
+}
 ///////////////////////////////////////////////////////////////////////////////
 
 pub fn solve(input: String) -> SolutionPair {
-
-    // Your solution here...
-    let sol1: u64 = 0;
-    let sol2: u64 = 0;
-
-    (Solution::from(sol1), Solution::from(sol2))
+    (part_1(input.clone()), part_2(input.clone()))
 }
