@@ -28,7 +28,7 @@ fn main() {
         let func = get_day_solver(day);
 
         let time = Instant::now();
-        let file_input = std::fs::read_to_string(format!("day{day}")).expect("you havent given me an input file silly");
+        let file_input = std::fs::read_to_string(format!("input/day{day}")).expect("you havent given me an input file silly");
         let (p1, p2) = func(file_input);
         let elapsed_ms = time.elapsed().as_nanos() as f64 / 1_000_000.0;
         
