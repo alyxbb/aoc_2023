@@ -1,7 +1,6 @@
+use crate::Solution;
 
-use crate::{Solution, SolutionPair};
-
-fn part_1(input: String) -> Solution {
+pub fn part_1(input: String) -> Solution {
     let mut sol = 0;
     'invalid: for (i, line) in input.lines().enumerate(){
         let game_data = line.split(": ").last().expect("Could not find game data");
@@ -36,7 +35,7 @@ fn part_1(input: String) -> Solution {
     Solution::from(sol)
 }
 
-fn part_2(input: String) -> Solution {
+pub fn part_2(input: String) -> Solution {
     let mut sol = 0;
     for line in input.lines(){
         let mut max_red = 0;
@@ -72,9 +71,4 @@ fn part_2(input: String) -> Solution {
         sol += max_red * max_green * max_blue;
     }
     Solution::from(sol)
-}
-///////////////////////////////////////////////////////////////////////////////
-
-pub fn solve(input: String) -> SolutionPair {
-    (part_1(input.clone()), part_2(input.clone()))
 }

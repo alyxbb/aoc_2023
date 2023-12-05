@@ -1,11 +1,11 @@
-use crate::{Solution, SolutionPair};
+use crate::Solution;
 
-fn part_1(input: String) -> Solution {
+pub fn part_1(input: String) -> Solution {
     let mut sol = 0;
     for line in input.lines() {
         let mut tens = None;
         let mut ones = None;
-        for char in line.chars(){
+        for char in line.chars() {
             if char.is_digit(10) {
                 ones = Some(char.to_digit(10).expect("this is bad"));
                 if tens.is_none() {
@@ -18,7 +18,7 @@ fn part_1(input: String) -> Solution {
     Solution::from(sol)
 }
 
-fn part_2(input: String) -> Solution {
+pub fn part_2(input: String) -> Solution {
     let mut sol = 0;
     for line in input.lines() {
         let mut tens = None;
@@ -52,8 +52,4 @@ fn part_2(input: String) -> Solution {
         sol += 10 * tens.expect("failed to find tens") + ones.expect("failed to find ones")
     }
     Solution::from(sol)
-}
-
-pub fn solve(input: String) -> SolutionPair {
-    (part_1(input.clone()), part_2(input.clone()))
 }
